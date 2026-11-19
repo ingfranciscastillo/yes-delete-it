@@ -232,7 +232,7 @@ Una tecla vista en tres cuartos, con un cursor de texto dentro. Se exporta a PNG
 - [ ] Firefox: `data_collection_permissions.required = ["none"]`.
 - [ ] Chrome: en la pestaña de prácticas de privacidad, se marca que no recoge ningún tipo de dato y se certifican las políticas de uso limitado.
 - [ ] `PRIVACY.md` publicado (en GitHub Pages o el repo) con una sola frase: *"Yes, Delete It no recoge, guarda ni transmite ningún dato."*
-- [ ] `web-ext lint` sin errores y `npm audit` limpio (solo hay devDependencies).
+- [ ] `web-ext lint` sin errores y `pnpm audit` limpio (solo hay devDependencies).
 
 ---
 

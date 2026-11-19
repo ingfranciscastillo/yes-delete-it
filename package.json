@@ -7,7 +7,7 @@
   "type": "module",
   "scripts": {
     "test": "playwright test",
-    "lint": "eslint . && npm run build && web-ext lint --source-dir dist/firefox",
+    "lint": "eslint . && pnpm run build && web-ext lint --source-dir dist/firefox",
     "build": "node scripts/build.js",
     "start:firefox": "web-ext run --source-dir dist/firefox",
     "serve": "node tests/serve.js"
@@ -18,5 +18,6 @@
     "eslint": "^10.15.0",
     "globals": "^17.14.0",
     "web-ext": "^10.8.0"
-  }
+  },
+  "packageManager": "pnpm@12.18.0"
 }
