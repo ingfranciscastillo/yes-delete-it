@@ -20,7 +20,7 @@
 
     // 1. insertText behaves like typing: it fires beforeinput/input and does not
     //    go through the clipboard, so it works where pasting is blocked.
-    let ok = false;
+    let ok;
     try {
       ok = document.execCommand('insertText', false, value);
     } catch {

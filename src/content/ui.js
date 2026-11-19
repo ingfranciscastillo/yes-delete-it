@@ -172,7 +172,7 @@
       ta.setAttribute('style', 'position:fixed;opacity:0;pointer-events:none');
       wrap.append(ta);
       ta.select();
-      let ok = false;
+      let ok;
       try {
         ok = document.execCommand('copy');
       } catch {

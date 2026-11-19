@@ -120,7 +120,7 @@
   // ── Candidate values ──────────────────────────────────────────────────────
 
   const clean = (v) => {
-    const s = (v ?? '').replace(/[​-‍﻿]/g, '').replace(/ /g, ' ').trim();
+    const s = (v ?? '').replace(/[\u200B-\u200D\uFEFF]/g, '').replace(/\u00A0/g, ' ').trim();
     if (!s || s.length > MAX_VALUE || /[\r\n]/.test(s)) return null;
     if (!/[\p{L}\p{N}]/u.test(s)) return null;
     return s;

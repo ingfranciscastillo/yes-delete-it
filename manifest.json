@@ -6,31 +6,44 @@
   "version": "0.1.0",
   "default_locale": "en",
   "minimum_chrome_version": "121",
-
   "action": {
     "default_title": "__MSG_actionTitle__"
   },
-
   "background": {
     "service_worker": "src/background.js",
-    "scripts": ["src/background.js"]
+    "scripts": [
+      "src/background.js"
+    ]
   },
-
-  "permissions": ["activeTab", "scripting", "storage"],
-
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
   "commands": {
     "_execute_action": {
-      "suggested_key": { "default": "Alt+Shift+D", "mac": "Alt+Shift+D" }
+      "suggested_key": {
+        "default": "Alt+Shift+D",
+        "mac": "Alt+Shift+D"
+      }
     }
   },
-
-  "options_ui": { "page": "src/options/options.html", "open_in_tab": false },
-
+  "options_ui": {
+    "page": "src/options/options.html",
+    "open_in_tab": false
+  },
   "browser_specific_settings": {
     "gecko": {
       "id": "yes-delete-it@extension.local",
       "strict_min_version": "140.0",
-      "data_collection_permissions": { "required": ["none"] }
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    },
+    "gecko_android": {
+      "strict_min_version": "142.0"
     }
   }
 }

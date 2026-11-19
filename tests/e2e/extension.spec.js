@@ -9,6 +9,7 @@ execFileSync('node', ['scripts/build.js'], { stdio: 'ignore' });
 const EXT = resolve('dist/test');
 
 const test = base.extend({
+  // eslint-disable-next-line no-empty-pattern -- Playwright fixture signature
   context: async ({}, use) => {
     const context = await chromium.launchPersistentContext('', {
       channel: 'chromium',
@@ -23,6 +24,7 @@ const test = base.extend({
   },
 });
 
+/* global chrome, inject -- evaluated inside the extension's service worker */
 const invoke = (sw) =>
   sw.evaluate(async () => {
     const [tab] = await chrome.tabs.query({ active: true, lastFocusedWindow: true });
