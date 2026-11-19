@@ -126,3 +126,23 @@ test('invoking twice does not duplicate keys', async ({ context, sw }) => {
   await invoke(sw);
   await expect(keys(page)).toHaveCount(1);
 });
+
+test('options: direct mode is saved and types without clicking the key', async ({ context, sw }) => {
+  const id = new URL(sw.url()).host;
+  const opts = await context.newPage();
+  await opts.goto(`chrome-extension://${id}/src/options/options.html`);
+  await expect(opts.locator('input[value="key"]')).toBeChecked();
+  await expect(opts.locator('#direct-warn')).toBeHidden();
+  await expect(opts.locator('#keys kbd')).toHaveText(['Alt', 'Shift', 'D']);
+
+  await opts.locator('input[value="direct"]').check();
+  await expect(opts.locator('#direct-warn')).toBeVisible();
+  await expect(opts.locator('#saved')).not.toBeEmpty();
+  expect(await sw.evaluate(() => chrome.storage.sync.get(null))).toEqual({ mode: 'direct', showCopy: true });
+
+  const page = await context.newPage();
+  await page.goto('http://127.0.0.1:4173/name-in-code.html');
+  await invoke(sw);
+  await expect(page.locator('input')).toHaveValue('acme/landing-2024');
+  expect(await page.evaluate(() => window.__deleted)).toBe(0);
+});

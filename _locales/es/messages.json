@@ -1,33 +1,90 @@
 {
-  "extName": { "message": "Yes, Delete It" },
-  "extDescription": { "message": "Rellena con un clic los campos de «escribe el nombre para confirmar». Tú sigues pulsando borrar. Sin datos, sin red." },
-  "actionTitle": { "message": "Buscar el campo de confirmación (Alt+Shift+D)" },
-  "unsupportedPage": { "message": "Esta página no permite extensiones" },
-
-  "keyType": { "message": "Escribir" },
-  "keyWritten": { "message": "Escrito" },
-  "keyReview": { "message": "Revisa antes de borrar." },
-  "keyFailed": { "message": "No se pudo escribir. Usa Copiar." },
-  "keyCopy": { "message": "Copiar" },
-  "keyCopied": { "message": "Copiado" },
-  "keyClose": { "message": "Cerrar" },
+  "extName": {
+    "message": "Yes, Delete It"
+  },
+  "extDescription": {
+    "message": "Rellena con un clic los campos de «escribe el nombre para confirmar». Tú sigues pulsando borrar. Sin datos, sin red."
+  },
+  "actionTitle": {
+    "message": "Buscar el campo de confirmación (Alt+Shift+D)"
+  },
+  "unsupportedPage": {
+    "message": "Esta página no permite extensiones"
+  },
+  "keyType": {
+    "message": "Escribir"
+  },
+  "keyWritten": {
+    "message": "Escrito"
+  },
+  "keyReview": {
+    "message": "Revisa antes de borrar."
+  },
+  "keyFailed": {
+    "message": "No se pudo escribir. Usa Copiar."
+  },
+  "keyCopy": {
+    "message": "Copiar"
+  },
+  "keyCopied": {
+    "message": "Copiado"
+  },
+  "keyClose": {
+    "message": "Cerrar"
+  },
   "keyTypeLabel": {
     "message": "Escribir $VALUE$ en el campo de confirmación",
-    "placeholders": { "value": { "content": "$1" } }
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
   },
   "keyCopyLabel": {
     "message": "Copiar $VALUE$",
-    "placeholders": { "value": { "content": "$1" } }
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
   },
-  "toastNone": { "message": "No hay ningún campo de confirmación en esta página." },
-
-  "optTitle": { "message": "Ajustes de Yes, Delete It" },
-  "optMode": { "message": "Al abrir la extensión" },
-  "optModeKey": { "message": "Mostrar la tecla junto al campo (recomendado)" },
-  "optModeDirect": { "message": "Escribir en el campo directamente" },
-  "optModeDirectWarn": { "message": "El texto se escribe sin volver a preguntar. Tú sigues pulsando el botón de borrar de la página." },
-  "optShowCopy": { "message": "Mostrar el botón Copiar" },
-  "optShortcut": { "message": "Cambiar el atajo de teclado" },
-  "optSaved": { "message": "Guardado" },
-  "optPrivacy": { "message": "Yes, Delete It no recoge, guarda ni envía ningún dato." }
+  "toastNone": {
+    "message": "No hay ningún campo de confirmación en esta página."
+  },
+  "optTitle": {
+    "message": "Ajustes de Yes, Delete It"
+  },
+  "optMode": {
+    "message": "Al abrir la extensión"
+  },
+  "optModeKey": {
+    "message": "Mostrar la tecla junto al campo (recomendado)"
+  },
+  "optModeDirect": {
+    "message": "Escribir en el campo directamente"
+  },
+  "optModeDirectWarn": {
+    "message": "El texto se escribe sin volver a preguntar. Tú sigues pulsando el botón de borrar de la página."
+  },
+  "optShowCopy": {
+    "message": "Mostrar el botón Copiar"
+  },
+  "optShortcut": {
+    "message": "Cambiar el atajo de teclado"
+  },
+  "optSaved": {
+    "message": "Guardado"
+  },
+  "optPrivacy": {
+    "message": "Yes, Delete It no recoge, guarda ni envía ningún dato."
+  },
+  "optShortcutLabel": {
+    "message": "Atajo de teclado"
+  },
+  "optShortcutNone": {
+    "message": "Sin atajo asignado"
+  },
+  "optCopyHint": {
+    "message": "Copia el texto para que lo pegues tú."
+  }
 }

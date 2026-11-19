@@ -1,3 +1,44 @@
 <!doctype html>
-<meta charset="utf-8">
-<title>Yes, Delete It</title>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="optTitle">Yes, Delete It</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <fieldset>
+      <legend data-i18n="optMode"></legend>
+      <label class="choice">
+        <input type="radio" name="mode" value="key">
+        <span data-i18n="optModeKey"></span>
+      </label>
+      <label class="choice">
+        <input type="radio" name="mode" value="direct" aria-describedby="direct-warn">
+        <span data-i18n="optModeDirect"></span>
+      </label>
+      <p class="warn" id="direct-warn" data-i18n="optModeDirectWarn" hidden></p>
+    </fieldset>
+
+    <label class="choice">
+      <input type="checkbox" name="showCopy" aria-describedby="copy-hint">
+      <span>
+        <span data-i18n="optShowCopy"></span>
+        <span class="hint" id="copy-hint" data-i18n="optCopyHint"></span>
+      </span>
+    </label>
+
+    <section class="shortcut" aria-labelledby="shortcut-label">
+      <h2 id="shortcut-label" data-i18n="optShortcutLabel"></h2>
+      <div class="keys" id="keys"></div>
+      <button type="button" id="change-shortcut" data-i18n="optShortcut"></button>
+    </section>
+
+    <p class="privacy" data-i18n="optPrivacy"></p>
+    <p class="saved" id="saved" role="status" aria-live="polite"></p>
+  </main>
+  <script src="../shared/api.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

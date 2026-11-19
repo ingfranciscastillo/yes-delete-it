@@ -1,33 +1,90 @@
 {
-  "extName": { "message": "Yes, Delete It" },
-  "extDescription": { "message": "Fills “type the name to confirm” fields in one click. You still press delete. No data, no network." },
-  "actionTitle": { "message": "Find the confirmation field (Alt+Shift+D)" },
-  "unsupportedPage": { "message": "This page doesn’t allow extensions" },
-
-  "keyType": { "message": "Type" },
-  "keyWritten": { "message": "Typed" },
-  "keyReview": { "message": "Check it before deleting." },
-  "keyFailed": { "message": "Couldn’t type it. Use Copy." },
-  "keyCopy": { "message": "Copy" },
-  "keyCopied": { "message": "Copied" },
-  "keyClose": { "message": "Close" },
+  "extName": {
+    "message": "Yes, Delete It"
+  },
+  "extDescription": {
+    "message": "Fills “type the name to confirm” fields in one click. You still press delete. No data, no network."
+  },
+  "actionTitle": {
+    "message": "Find the confirmation field (Alt+Shift+D)"
+  },
+  "unsupportedPage": {
+    "message": "This page doesn’t allow extensions"
+  },
+  "keyType": {
+    "message": "Type"
+  },
+  "keyWritten": {
+    "message": "Typed"
+  },
+  "keyReview": {
+    "message": "Check it before deleting."
+  },
+  "keyFailed": {
+    "message": "Couldn’t type it. Use Copy."
+  },
+  "keyCopy": {
+    "message": "Copy"
+  },
+  "keyCopied": {
+    "message": "Copied"
+  },
+  "keyClose": {
+    "message": "Close"
+  },
   "keyTypeLabel": {
     "message": "Type $VALUE$ into the confirmation field",
-    "placeholders": { "value": { "content": "$1" } }
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
   },
   "keyCopyLabel": {
     "message": "Copy $VALUE$",
-    "placeholders": { "value": { "content": "$1" } }
+    "placeholders": {
+      "value": {
+        "content": "$1"
+      }
+    }
   },
-  "toastNone": { "message": "There’s no confirmation field on this page." },
-
-  "optTitle": { "message": "Yes, Delete It settings" },
-  "optMode": { "message": "When you open the extension" },
-  "optModeKey": { "message": "Show the key next to the field (recommended)" },
-  "optModeDirect": { "message": "Type into the field straight away" },
-  "optModeDirectWarn": { "message": "The text is typed without asking again. You still press the page’s delete button." },
-  "optShowCopy": { "message": "Show the Copy button" },
-  "optShortcut": { "message": "Change the keyboard shortcut" },
-  "optSaved": { "message": "Saved" },
-  "optPrivacy": { "message": "Yes, Delete It doesn’t collect, store or send any data." }
+  "toastNone": {
+    "message": "There’s no confirmation field on this page."
+  },
+  "optTitle": {
+    "message": "Yes, Delete It settings"
+  },
+  "optMode": {
+    "message": "When you open the extension"
+  },
+  "optModeKey": {
+    "message": "Show the key next to the field (recommended)"
+  },
+  "optModeDirect": {
+    "message": "Type into the field straight away"
+  },
+  "optModeDirectWarn": {
+    "message": "The text is typed without asking again. You still press the page’s delete button."
+  },
+  "optShowCopy": {
+    "message": "Show the Copy button"
+  },
+  "optShortcut": {
+    "message": "Change the keyboard shortcut"
+  },
+  "optSaved": {
+    "message": "Saved"
+  },
+  "optPrivacy": {
+    "message": "Yes, Delete It doesn’t collect, store or send any data."
+  },
+  "optShortcutLabel": {
+    "message": "Keyboard shortcut"
+  },
+  "optShortcutNone": {
+    "message": "No shortcut set"
+  },
+  "optCopyHint": {
+    "message": "Copies the text so you can paste it yourself."
+  }
 }

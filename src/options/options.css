@@ -1,0 +1,51 @@
+:root {
+  color-scheme: light dark;
+  --key: #EDF0F4; --key-line: #C9D0DA; --key-edge: #AEB7C4;
+  --ink: #1B2230; --muted: #5B6578; --signal: #2A55E0; --hi: rgba(255,255,255,.75);
+  --bg: #FFFFFF;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --key: #2A3140; --key-line: #434D61; --key-edge: #0A0D13;
+    --ink: #E6EAF2; --muted: #9AA4B6; --signal: #7C9BFF; --hi: rgba(255,255,255,.06);
+    --bg: #1C2029;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 14px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, sans-serif;
+}
+main { max-width: 520px; padding: 20px 16px 16px; display: grid; gap: 20px; }
+
+fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 8px; }
+legend, h2 { font-size: 14px; font-weight: 600; margin: 0 0 6px; padding: 0; }
+
+.choice { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+.choice input { margin: 2px 0 0; accent-color: var(--signal); width: 16px; height: 16px; flex: none; }
+.choice > span { display: grid; gap: 2px; }
+.hint { color: var(--muted); font-size: 13px; }
+.warn { margin: 0 0 0 26px; color: var(--muted); font-size: 13px; }
+
+.shortcut { display: grid; gap: 10px; justify-items: start; }
+.keys { display: flex; gap: 6px; align-items: center; min-height: 30px; }
+.keys .plus { color: var(--muted); }
+.keys .none { color: var(--muted); }
+
+kbd, button {
+  font: 600 12.5px/18px ui-monospace, "SFMono-Regular", "Cascadia Code", "JetBrains Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  padding: 5px 10px 4px; border-radius: 7px;
+  background: var(--key); color: var(--ink);
+  border: 1px solid var(--key-line); border-bottom: 3px solid var(--key-edge);
+  box-shadow: inset 0 1px 0 var(--hi);
+}
+button {
+  font: 500 13px/18px system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, sans-serif;
+  cursor: pointer; transition: transform 80ms ease-out, border-bottom-width 80ms ease-out;
+}
+button:active { transform: translateY(1px); border-bottom-width: 2px; }
+:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }
+
+.privacy { margin: 0; color: var(--muted); font-size: 13px; }
+.saved { margin: 0; min-height: 1.45em; color: var(--signal); font-size: 13px; }
+@media (prefers-reduced-motion: reduce) { button { transition: none; } }
