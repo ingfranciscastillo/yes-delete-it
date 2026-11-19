@@ -11,47 +11,72 @@
   const GAP = 6;
   const live = new Set();
 
+  // Layout: a small tray (our own background, so contrast never depends on the
+  // page) holding one physical key — the primary action — and two quiet, flat
+  // secondary buttons. Every size is fixed in px so system fonts can't change
+  // heights or clip anything.
   const CSS = `
     :host { color-scheme: light dark; }
     * { box-sizing: border-box; }
     .wrap {
-      --key: #EDF0F4; --key-line: #C9D0DA; --key-edge: #AEB7C4; --ink: #1B2230; --muted: #5B6578; --signal: #2A55E0;
-      --hi: rgba(255,255,255,.75);
-      display: flex; flex-direction: column; align-items: flex-start; gap: 4px;
-      font: 500 13px/1.25 system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, sans-serif;
+      --tray: #F3F5F8; --tray-line: #D8DDE5;
+      --key: #FFFFFF; --key-line: #C5CDD8; --key-edge: #A9B3C1; --hi: rgba(255,255,255,.9);
+      --quiet-hover: #E5E9EF; --quiet-press: #D9DEE6;
+      --ink: #1B2230; --muted: #566074; --signal: #2A55E0; --signal-edge: #1C3BA8;
+      --shadow: 0 1px 2px rgba(27,34,48,.08), 0 4px 12px -4px rgba(27,34,48,.18);
+      display: inline-flex; flex-direction: column; align-items: flex-start; gap: 6px;
+      max-width: 100%; padding: 5px; border-radius: 12px;
+      background: var(--tray); border: 1px solid var(--tray-line); box-shadow: var(--shadow);
+      font: 500 13px/16px system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, sans-serif;
       color: var(--ink); text-align: left; direction: ltr;
     }
     @media (prefers-color-scheme: dark) {
-      .wrap { --key: #2A3140; --key-line: #434D61; --key-edge: #0A0D13; --ink: #E6EAF2; --muted: #9AA4B6; --signal: #7C9BFF; --hi: rgba(255,255,255,.06); }
+      .wrap {
+        --tray: #1D222C; --tray-line: #333B4A;
+        --key: #323B4D; --key-line: #4A5569; --key-edge: #10141B; --hi: rgba(255,255,255,.07);
+        --quiet-hover: #2A313E; --quiet-press: #323A49;
+        --ink: #E8ECF3; --muted: #A3ACBD; --signal: #8AA6FF; --signal-edge: #4F6FD8;
+        --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 16px -6px rgba(0,0,0,.5);
+      }
     }
-    .row { display: flex; gap: 6px; align-items: stretch; max-width: 100%; line-height: 18px; }
+    .row { display: flex; gap: 8px; align-items: flex-start; max-width: 100%; }
     button {
-      all: unset; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; line-height: 18px;
-      padding: 5px 10px 4px; border-radius: 7px;
-      background: var(--key); color: var(--ink);
-      border: 1px solid var(--key-line); border-bottom: 3px solid var(--key-edge);
-      box-shadow: inset 0 1px 0 var(--hi);
-      transition: transform 80ms ease-out, border-bottom-width 80ms ease-out;
-      white-space: nowrap; user-select: none; -webkit-user-select: none;
+      all: unset; box-sizing: border-box; cursor: pointer;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px; flex: none;
+      white-space: nowrap; user-select: none; -webkit-user-select: none; color: var(--ink);
     }
-    button:active { transform: translateY(1px); border-bottom-width: 2px; }
     button:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }
-    .type { min-width: 0; overflow: hidden; }
+
+    /* Primary: the key. 31px face + 3px edge; pressing sinks it 1px. */
+    .type {
+      height: 34px; padding: 0 12px; border-radius: 8px; flex: 0 1 auto; min-width: 0;
+      background: var(--key); border: 1px solid var(--key-line); border-bottom: 3px solid var(--key-edge);
+      box-shadow: inset 0 1px 0 var(--hi);
+      transition: transform 80ms ease-out, border-bottom-width 80ms ease-out, height 80ms ease-out;
+    }
+    .type:active { transform: translateY(1px); border-bottom-width: 2px; height: 33px; }
     .verb { color: var(--muted); }
     .value {
-      font: 600 12.5px/18px ui-monospace, "SFMono-Regular", "Cascadia Code", "JetBrains Mono", Menlo, Consolas, "Liberation Mono", monospace;
-      overflow: hidden; text-overflow: ellipsis;
+      font: 600 12.5px/16px ui-monospace, "SFMono-Regular", "Cascadia Code", "JetBrains Mono", Menlo, Consolas, "Liberation Mono", monospace;
+      overflow: hidden; text-overflow: ellipsis; min-width: 0;
     }
-    .close { padding: 5px 8px 4px; align-items: center; color: var(--muted); }
-    .close svg { width: 10px; height: 10px; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; }
-    .type[data-state="written"] { border-color: var(--signal); border-bottom-color: var(--signal); }
+    .type[data-state="written"] { border-color: var(--signal); border-bottom-color: var(--signal-edge); }
     .type[data-state="written"] .verb { color: var(--signal); }
-    .note { margin: 0; font-size: 12px; color: var(--muted); }
-    .note:empty { display: none; }
-    .toast {
-      padding: 9px 14px 8px; border-radius: 9px; background: var(--key); color: var(--ink);
-      border: 1px solid var(--key-line); border-bottom: 3px solid var(--key-edge); box-shadow: inset 0 1px 0 var(--hi);
+
+    /* Secondary: flat, same height as the key's face, no edge to look cut off. */
+    .copy, .close {
+      height: 31px; border-radius: 8px; border: 1px solid transparent; background: transparent;
+      transition: background-color 120ms ease-out;
     }
+    .copy { padding: 0 11px; border-color: var(--tray-line); }
+    .close { width: 31px; color: var(--muted); }
+    .copy:hover, .close:hover { background: var(--quiet-hover); }
+    .copy:active, .close:active { background: var(--quiet-press); }
+    .close svg { width: 10px; height: 10px; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; }
+
+    .note { margin: 0; padding: 0 6px 2px; font-size: 12px; line-height: 16px; color: var(--muted); }
+    .note:empty { display: none; }
+    .toast { padding: 7px 10px; }
     @media (prefers-reduced-motion: reduce) { button { transition: none; } }
   `;
 
