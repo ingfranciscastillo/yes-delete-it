@@ -1,5 +1,5 @@
 {
-  "extName": { "message": "Sí, bórralo (Yes, Delete It)" },
+  "extName": { "message": "Yes, Delete It" },
   "extDescription": { "message": "Rellena con un clic los campos de «escribe el nombre para confirmar». Tú sigues pulsando borrar. Sin datos, sin red." },
   "actionTitle": { "message": "Buscar el campo de confirmación (Alt+Shift+D)" },
   "unsupportedPage": { "message": "Esta página no permite extensiones" },
@@ -21,7 +21,7 @@
   },
   "toastNone": { "message": "No hay ningún campo de confirmación en esta página." },
 
-  "optTitle": { "message": "Ajustes de Sí, bórralo" },
+  "optTitle": { "message": "Ajustes de Yes, Delete It" },
   "optMode": { "message": "Al abrir la extensión" },
   "optModeKey": { "message": "Mostrar la tecla junto al campo (recomendado)" },
   "optModeDirect": { "message": "Escribir en el campo directamente" },
@@ -29,5 +29,5 @@
   "optShowCopy": { "message": "Mostrar el botón Copiar" },
   "optShortcut": { "message": "Cambiar el atajo de teclado" },
   "optSaved": { "message": "Guardado" },
-  "optPrivacy": { "message": "Sí, bórralo no recoge, guarda ni envía ningún dato." }
+  "optPrivacy": { "message": "Yes, Delete It no recoge, guarda ni envía ningún dato." }
 }

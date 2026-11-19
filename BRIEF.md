@@ -85,6 +85,6 @@ Tipografía: `system-ui` para la interfaz y `ui-monospace` para el texto a escri
 
 ## Nombre y textos
 
-- Nombre: **Yes, Delete It**, localizado al español como "Sí, bórralo".
+- Nombre: **Yes, Delete It** en todos los idiomas (un solo nombre reconocible en las tiendas). Solo se traducen la descripción y los textos de la interfaz.
 - Descripción corta para las tiendas (máx. 132 caracteres): *"Rellena con un clic los campos de 'escribe el nombre para confirmar'. Tú sigues pulsando borrar. Sin datos, sin red."*
 - Propósito único (Chrome): *"Ayudar a rellenar campos de confirmación de borrado en la página activa cuando el usuario lo solicita."*
