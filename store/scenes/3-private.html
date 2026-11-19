@@ -1,0 +1,23 @@
+<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="scene.css"><script>if(new URLSearchParams(location.search).get("lang")==="es"){document.documentElement.lang="es";addEventListener("DOMContentLoaded",()=>{for(const el of document.querySelectorAll("[data-es]"))el.textContent=el.dataset.es})}</script>
+<style>
+  .panel { margin: 0 72px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
+  .card { background: #FFFFFF; border-radius: 14px; padding: 8px; box-shadow: 0 0 0 1px #CBD2DC, 0 24px 60px -30px rgba(27,34,48,.35); }
+  .card img { display: block; width: 100%; border-radius: 8px; }
+  .facts { margin: 0; padding: 0; list-style: none; display: grid; gap: 14px; font-size: 17px; }
+  .facts li { background: #FFFFFF; border-radius: 12px; padding: 16px 20px; box-shadow: 0 0 0 1px #CBD2DC; }
+  .facts b { display: block; margin-bottom: 2px; }
+  .facts span { color: #5B6578; }
+</style>
+<header class="caption">
+  <h1 data-es="Privada desde el diseño">Private by design</h1>
+  <p data-es="Sin permiso para leer tus sitios, sin peticiones de red, sin guardar nada. Dos ajustes y ya está.">No permission to read your sites, no network requests, nothing stored. Two settings, and that’s it.</p>
+</header>
+<div class="panel">
+  <div class="card"><img id="opts" src="" alt=""></div>
+  <ul class="facts">
+    <li><b data-es="Solo lee una página cuando se lo pides">Reads a page only when you ask</b><span data-es="activeTab: solo la pestaña actual, solo tras tu clic o tu atajo.">activeTab: just the current tab, just after your click or shortcut.</span></li>
+    <li><b data-es="Nunca toca campos sensibles">Never touches sensitive fields</b><span data-es="Ignora los campos de contraseña, tarjeta y códigos de un solo uso.">Password, card and one-time-code inputs are skipped.</span></li>
+    <li><b data-es="Nada sale de tu navegador">Nothing leaves your browser</b><span data-es="Sin analítica, sin cuentas, sin código remoto. JavaScript legible.">No analytics, no accounts, no remote code. Plain, readable JavaScript.</span></li>
+  </ul>
+</div>
+<script>document.getElementById("opts").src = "options-" + (new URLSearchParams(location.search).get("lang") || "en") + ".png";</script>

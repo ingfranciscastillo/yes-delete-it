@@ -1,0 +1,15 @@
+<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="scene.css"><script>if(new URLSearchParams(location.search).get("lang")==="es"){document.documentElement.lang="es";addEventListener("DOMContentLoaded",()=>{for(const el of document.querySelectorAll("[data-es]"))el.textContent=el.dataset.es})}</script><script src="/tests/fixtures/fixture.js"></script>
+<header class="caption">
+  <h1 data-es="El botón de borrar lo pulsas tú">You still press delete</h1>
+  <p data-es="Escribe, nunca borra. Los diálogos con dos campos tienen dos teclas, y funciona aunque la web bloquee el pegado.">It types, it never deletes. Dialogs with two fields get two keys, and it works even where pasting is blocked.</p>
+</header>
+<div class="window"><aside class="side"><b>Acme Cloud</b><div>Overview</div><div class="on">Projects</div><div>Databases</div><div>Domains</div><div>Settings</div></aside><main class="main"><h2>Databases</h2><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div></main>
+  <div class="scrim"><div class="modal" role="dialog" aria-modal="true">
+    <h3>Delete database</h3>
+    <label>Enter the database name <b>prod-db-eu-west-1</b> to continue:
+      <input data-confirm="prod-db-eu-west-1" data-button="del" onpaste="return false"></label>
+    <label>To verify, type <b>delete my database</b> below:
+      <input data-confirm="delete my database" data-button="del" onpaste="return false"></label>
+    <div class="actions"><button>Cancel</button><button class="danger" id="del">Delete database</button></div>
+  </div></div>
+</div>

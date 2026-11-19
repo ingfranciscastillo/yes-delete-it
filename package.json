@@ -12,7 +12,8 @@
     "start:firefox": "web-ext run --source-dir dist/firefox",
     "serve": "node tests/serve.js",
     "icons": "node scripts/icons.js",
-    "package": "node scripts/package.js"
+    "package": "node scripts/package.js",
+    "store-assets": "node scripts/store-assets.js"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

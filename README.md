@@ -20,6 +20,8 @@ GitHub, Vercel, Netlify, Supabase, Cloudflare and most dashboards make you type 
 
 Yes, Delete It finds the confirmation field and shows the exact text it expects on a small key under it. Click the key and the text is typed in. The decision, and the delete button, stay yours.
 
+<img src="store/en/screenshot-2.png" alt="A delete-database dialog with two confirmation fields, each filled in by the extension and marked Typed. The red Delete database button is enabled but not pressed.">
+
 ## Features
 
 - **Shows before it types.** The key displays the exact text, and nothing is typed until you click it.
@@ -90,6 +92,7 @@ Full policy: [PRIVACY.md](PRIVACY.md).
 | `pnpm run start:firefox` | Opens Firefox with the extension loaded |
 | `pnpm run icons` | Renders `assets-src/*.svg` to the PNG sizes the browsers need |
 | `pnpm run package` | Creates store ZIPs and a source archive in `web-ext-artifacts/` |
+| `pnpm run store-assets` | Generates store screenshots and promo tiles (en, es) in `store/` |
 
 > [!IMPORTANT]
 > Before the first `pnpm test`, download the test browser with `pnpm exec playwright install chromium`.

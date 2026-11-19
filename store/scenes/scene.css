@@ -1,0 +1,36 @@
+/* Store screenshot scenes, 1280×800. A fictional dashboard ("Acme Cloud"). */
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 1280px; height: 800px; overflow: hidden; }
+body {
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, sans-serif;
+  color: #1B2230; background: #E4E8EF;
+  display: grid; grid-template-rows: 190px 1fr;
+}
+.caption { padding: 44px 72px 0; }
+.caption h1 { margin: 0; font-size: 38px; line-height: 1.15; font-weight: 700; letter-spacing: -0.01em; }
+.caption p { margin: 12px 0 0; max-width: 760px; font-size: 18px; color: #5B6578; }
+
+.window {
+  margin: 0 72px; border-radius: 14px 14px 0 0; background: #FFFFFF; overflow: hidden;
+  box-shadow: 0 0 0 1px #CBD2DC, 0 24px 60px -30px rgba(27, 34, 48, .35);
+  display: grid; grid-template-columns: 220px 1fr; position: relative;
+}
+.side { background: #F4F6F9; border-right: 1px solid #E1E5EB; padding: 22px 18px; color: #5B6578; font-size: 14px; }
+.side b { display: block; color: #1B2230; font-size: 15px; margin-bottom: 18px; }
+.side div { padding: 6px 10px; border-radius: 6px; }
+.side .on { background: #E4E8EF; color: #1B2230; }
+.main { padding: 26px 32px; color: #5B6578; }
+.main h2 { margin: 0 0 16px; color: #1B2230; font-size: 20px; }
+.row { height: 44px; border-bottom: 1px solid #EEF0F3; }
+
+.scrim { position: absolute; inset: 0; background: rgba(27, 34, 48, .42); display: grid; place-items: start center; padding-top: 26px; }
+.modal { zoom: 1.25; width: 540px; background: #FFFFFF; border-radius: 12px; padding: 24px 26px 22px; box-shadow: 0 20px 50px -12px rgba(0,0,0,.4); color: #1B2230; }
+.modal h3 { margin: 0 0 8px; font-size: 19px; }
+.modal p { margin: 0 0 10px; color: #3A4354; }
+.modal code, .modal b { font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace; font-weight: 600; color: #1B2230; }
+.modal input { display: block; width: 100%; padding: 9px 11px; margin: 6px 0 4px; font: inherit; border: 1px solid #C4CBD6; border-radius: 7px; }
+.modal label { display: block; margin-bottom: 12px; color: #3A4354; }
+.actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px; }
+.actions button { font: inherit; font-weight: 600; padding: 8px 16px; border-radius: 7px; border: 1px solid #C4CBD6; background: #FFFFFF; color: #1B2230; }
+.actions .danger { background: #C62828; border-color: #C62828; color: #FFFFFF; }
+.actions .danger:disabled { opacity: .45; }
