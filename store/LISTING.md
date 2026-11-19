@@ -12,9 +12,10 @@ Fields marked **TODO** need your input before publishing.
 | Name | Yes, Delete It |
 | Version | `0.1.0` (bump `manifest.json` to `1.0.0` for the first public release) |
 | Category | Chrome: **Developer Tools** · AMO: **Web Development** |
-| Homepage / support URL | **TODO** — e.g. the GitHub repo |
-| Privacy policy URL | **TODO** — the public URL of `PRIVACY.md` (GitHub renders it) |
-| Support email | **TODO** — use an alias, not your personal address |
+| Homepage | https://github.com/ingfranciscastillo/yes-delete-it |
+| Support URL | https://github.com/ingfranciscastillo/yes-delete-it/issues |
+| Privacy policy URL | https://github.com/ingfranciscastillo/yes-delete-it/blob/main/PRIVACY.md |
+| Support email | **TODO** — optional on AMO; use an alias, not your personal address |
 | License | MIT |
 
 ### Summary (≤ 132 characters)

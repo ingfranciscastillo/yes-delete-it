@@ -4,6 +4,7 @@
   "short_name": "Yes, Delete It",
   "description": "__MSG_extDescription__",
   "version": "0.1.0",
+  "homepage_url": "https://github.com/ingfranciscastillo/yes-delete-it",
   "default_locale": "en",
   "minimum_chrome_version": "121",
   "icons": {

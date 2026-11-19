@@ -22,5 +22,13 @@
     "globals": "^17.14.0",
     "web-ext": "^10.8.0"
   },
-  "packageManager": "pnpm@12.18.0"
+  "packageManager": "pnpm@12.18.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ingfranciscastillo/yes-delete-it.git"
+  },
+  "homepage": "https://github.com/ingfranciscastillo/yes-delete-it#readme",
+  "bugs": {
+    "url": "https://github.com/ingfranciscastillo/yes-delete-it/issues"
+  }
 }
