@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <!-- Toolbar sizes: fills the canvas, no dish, thicker cursor -->
+  <rect x="1" y="2" width="14" height="13.5" rx="3.2" fill="#16308A"/>
+  <rect x="1" y="1" width="14" height="12" rx="3.2" fill="#2A55E0"/>
+  <path d="M5.6 4h4.8M8 4v6M5.6 10h4.8" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round"/>
+</svg>

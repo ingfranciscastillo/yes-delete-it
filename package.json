@@ -10,7 +10,8 @@
     "lint": "eslint . && pnpm run build && web-ext lint --source-dir dist/firefox",
     "build": "node scripts/build.js",
     "start:firefox": "web-ext run --source-dir dist/firefox",
-    "serve": "node tests/serve.js"
+    "serve": "node tests/serve.js",
+    "icons": "node scripts/icons.js"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
