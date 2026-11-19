@@ -1,0 +1,7 @@
+<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="style.css"><script src="fixture.js"></script><title>paste blocked</title>
+<div class="modal">
+  <p>Type <code>billing-service</code> to confirm. Pasting is disabled.</p>
+  <input data-expect="billing-service" data-confirm="billing-service" data-button="del"
+         onpaste="return false" ondrop="return false">
+  <button class="danger" id="del">Delete service</button>
+</div>

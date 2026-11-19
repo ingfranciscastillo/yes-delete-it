@@ -1,0 +1,22 @@
+{
+  "name": "yes-delete-it",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Fills “type the name to confirm” fields in one click. Chrome and Firefox extension.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "lint": "eslint . && web-ext lint --source-dir . --ignore-files tests scripts node_modules package.json package-lock.json eslint.config.js playwright.config.js '*.md'",
+    "build": "node scripts/build.js",
+    "start:firefox": "web-ext run --source-dir dist/firefox",
+    "serve": "node tests/serve.js"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.65.1",
+    "eslint": "^10.15.0",
+    "globals": "^17.14.0",
+    "web-ext": "^10.8.0"
+  }
+}

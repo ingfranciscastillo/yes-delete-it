@@ -1,0 +1,29 @@
+<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="style.css"><script src="fixture.js"></script><title>react-like controlled input</title>
+<div class="modal">
+  <p>Enter <code>api-gateway</code> below to confirm.</p>
+  <input id="ctl" data-expect="api-gateway" data-confirm="api-gateway" data-button="del">
+  <button class="danger" id="del">Delete</button>
+</div>
+<script>
+// Emulates React's value tracker: an own "value" property on the node remembers
+// the last value React saw. An 'input' event only counts as a change when the
+// real (prototype) value differs from the tracked one. Assigning input.value
+// directly updates the tracker too, so naive scripts are ignored.
+document.addEventListener('DOMContentLoaded', () => {
+  const el = document.getElementById('ctl');
+  const desc = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');
+  let tracked = '';
+  Object.defineProperty(el, 'value', {
+    configurable: true,
+    get() { return desc.get.call(this); },
+    set(v) { tracked = String(v); desc.set.call(this, v); },
+  });
+  window.__reactState = '';
+  el.addEventListener('input', () => {
+    const real = desc.get.call(el);
+    if (real === tracked) return; // React would bail out here
+    tracked = real;
+    window.__reactState = real;
+  }, true);
+});
+</script>

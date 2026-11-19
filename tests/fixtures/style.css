@@ -1,0 +1,5 @@
+body { font: 15px/1.5 system-ui, sans-serif; margin: 40px; color: #222; }
+.modal { max-width: 440px; border: 1px solid #ccc; border-radius: 8px; padding: 20px; }
+input { display: block; width: 100%; box-sizing: border-box; padding: 8px; margin: 8px 0 16px; font: inherit; }
+button.danger { background: #c62828; color: white; border: 0; padding: 8px 14px; border-radius: 6px; }
+button.danger:disabled { opacity: .4; }

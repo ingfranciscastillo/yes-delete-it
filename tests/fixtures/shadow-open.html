@@ -1,0 +1,16 @@
+<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="style.css"><script src="fixture.js"></script><title>open shadow root</title>
+<x-confirm></x-confirm>
+<script>
+customElements.define('x-confirm', class extends HTMLElement {
+  connectedCallback() {
+    const root = this.attachShadow({ mode: 'open' });
+    root.innerHTML = `<link rel="stylesheet" href="style.css">
+      <div class="modal">
+        <p>Type <code>edge-cache</code> to confirm.</p>
+        <input data-expect="edge-cache" data-confirm="edge-cache" data-button="del">
+        <button class="danger" id="del">Delete</button>
+      </div>`;
+    wire(root);
+  }
+});
+</script>

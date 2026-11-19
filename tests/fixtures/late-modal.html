@@ -1,0 +1,14 @@
+<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="style.css"><script src="fixture.js"></script><title>late modal</title>
+<button id="open">Delete…</button>
+<div id="slot"></div>
+<script>
+document.addEventListener('DOMContentLoaded', () => setTimeout(() => {
+  document.getElementById('slot').innerHTML = `
+    <div class="modal" role="dialog">
+      <p>Type <code>old-worker</code> to confirm.</p>
+      <input data-expect="old-worker" data-confirm="old-worker" data-button="del">
+      <button class="danger" id="del">Delete worker</button>
+    </div>`;
+  wire();
+}, Number(new URLSearchParams(location.search).get('delay') || 600)));
+</script>

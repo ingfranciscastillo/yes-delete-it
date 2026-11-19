@@ -1,0 +1,8 @@
+<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="style.css"><script src="fixture.js"></script><title>unrelated form</title>
+<header><input type="search" placeholder="Search projects" data-expect=""></header>
+<form class="modal" onsubmit="return false">
+  <h2>Project settings</h2>
+  <label>Project name <input value="acme" data-expect=""></label>
+  <p>Use <code>kebab-case</code> for names.</p>
+  <label>Description <textarea data-expect=""></textarea></label>
+</form>

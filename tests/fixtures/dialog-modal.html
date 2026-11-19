@@ -1,0 +1,8 @@
+<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="style.css"><script src="fixture.js"></script><title>native modal dialog</title>
+<button id="open">Open</button>
+<dialog id="dlg" style="transform: translate(0, 10px)">
+  <p>This will delete <b>staging</b> forever. Type <kbd>staging</kbd> to confirm.</p>
+  <input data-expect="staging" data-confirm="staging" data-button="del">
+  <button class="danger" id="del">Delete environment</button>
+</dialog>
+<script>document.addEventListener('DOMContentLoaded', () => document.getElementById('dlg').showModal());</script>

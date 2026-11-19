@@ -1,0 +1,9 @@
+<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="style.css"><script src="fixture.js"></script><title>two inputs</title>
+<form class="modal" onsubmit="return false">
+  <h2>Delete my-app</h2>
+  <label>Enter the project name <b>my-app</b> to continue:
+    <input data-expect="my-app" data-confirm="my-app" data-button="del"></label>
+  <label>To verify, type <b>delete my project</b> below:
+    <input data-expect="delete my project" data-confirm="delete my project" data-button="del"></label>
+  <button class="danger" id="del">Continue</button>
+</form>
