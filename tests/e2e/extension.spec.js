@@ -146,3 +146,11 @@ test('options: direct mode is saved and types without clicking the key', async (
   await expect(page.locator('input')).toHaveValue('acme/landing-2024');
   expect(await page.evaluate(() => window.__deleted)).toBe(0);
 });
+
+test('two quick invocations (double click) still show one key per field', async ({ context, sw }) => {
+  const page = await context.newPage();
+  await page.goto('http://127.0.0.1:4173/two-inputs.html');
+  await Promise.all([invoke(sw), invoke(sw), invoke(sw)]);
+  await page.waitForTimeout(800); // let the late-modal watcher run too
+  await expect(keys(page)).toHaveCount(2);
+});
